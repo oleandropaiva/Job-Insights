@@ -37,7 +37,9 @@ def get_unique_job_types(path: str) -> List[str]:
     list
         List of unique job types
     """
-    raise NotImplementedError
+    with open(path, encoding='utf-8') as file:
+        reader = csv.DictReader(file, delimiter=",", quotechar='"')
+        return list(set([row['job_type'] for row in reader]))
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
