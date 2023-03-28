@@ -46,7 +46,7 @@ def get_min_salary(path: str) -> int:
     for list in salaries:
         if list["min_salary"].isnumeric():
             minSalary.append(int(list["min_salary"]))
-    return max(minSalary)
+    return min(minSalary)
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
