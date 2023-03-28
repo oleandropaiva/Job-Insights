@@ -18,9 +18,9 @@ def get_unique_industries(path: str) -> List[str]:
     list
         List of unique industries
     """
-    listJobs = read(path)
+    listIndustry = read(path)
     listIndustries = []
-    for job in listJobs:
+    for job in listIndustry:
         if job["industry"] != "" and job["industry"] not in listIndustries:
             listIndustries.append(job["industry"])
     return listIndustries
