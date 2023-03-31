@@ -106,10 +106,13 @@ def filter_by_salary_range(
     #     if matches_salary_range(salary, salary):
     #         filteredBySalary.append(salary)
     # return filteredBySalary
-    try:
-        return [
-            job for job in jobs
-            if matches_salary_range(job, salary)
-                ]
-    except ValueError:
-        return []
+
+    filteredBySalary = []
+
+    for job in jobs:
+        try:
+            if matches_salary_range(job, salary):
+                filteredBySalary.append(job)
+        except ValueError:
+            ...  # print("Invalid salary")
+    return filteredBySalary
