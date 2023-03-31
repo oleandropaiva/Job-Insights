@@ -108,8 +108,8 @@ def filter_by_salary_range(
     # return filteredBySalary
     try:
         return [
-            filter for filter in jobs
-            if matches_salary_range(filter, salary)
+            job for job in jobs
+            if matches_salary_range(job, salary)
                 ]
     except ValueError:
         return []
